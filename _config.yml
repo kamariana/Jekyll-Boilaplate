@@ -1,0 +1,33 @@
+# Site settings
+title: The main title of your site
+email: general email of the site
+description: description of the site
+baseurl: ""
+url: "" # the base hostname & protocol for your site
+web_mail: https://s217085.gridserver.com/.tools/webmail/
+year: 2019
+ 
+# Contact details
+tel: (+220) 444 - 5555
+phone: (+220) 227 7552
+address: P.O.Box 2397, Serrekunda, The Gambia
+  
+# Social networks
+facebook: url of your facebook page
+twitter: url of you twitter page
+
+
+# General settings
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+sass:
+  sass_dir: _scss
+  style: :compressed
+
+
+# Collections
+collections:
+  nameofcollection:
+    output: false
