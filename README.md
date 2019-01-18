@@ -33,17 +33,11 @@ With `:serve => true` specified in the `jekyll-plus` guard options we can now st
 guard
 ```
 
-After the `guard` is executed some output will appear that looks something like this:
-
-```shel
-
-```
-
 Now, switch to the browser, make sure the LiveReload extension is turned on at the righ top side of the browser window. 
 
-If everything is configured correctly the line below will appear in the termina.
+If you make any changes the browser will reload automatically 
 
-```shell
+## Credits
 
-```
+http://dan.doezema.com/2014/01/setting-up-livereload-with-jekyll/
 
