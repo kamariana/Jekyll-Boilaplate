@@ -35,7 +35,9 @@ guard
 
 Now, switch to the browser, make sure the LiveReload extension is turned on at the righ top side of the browser window. 
 
-If you make any changes the browser will reload automatically 
+If you make any changes the browser will reload automatically. 
+
+Please do not hesitate to let me know if you run into any problem.
 
 ## Credits
 
