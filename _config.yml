@@ -1,33 +1,54 @@
+# Welcome to Jekyll Boilerplate
+
 # Site settings
 title: The main title of your site
-email: general email of the site
 description: description of the site
-baseurl: ""
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
+
 web_mail: https://s217085.gridserver.com/.tools/webmail/
 year: 2019
  
-# Contact details
+# Contact Details
+email: general email of the site
 tel: (+220) 444 - 5555
 phone: (+220) 227 7552
 address: P.O.Box 2397, Serrekunda, The Gambia
   
-# Social networks
+# Social Network Settings
 facebook: url of your facebook page
 twitter: url of you twitter page
 
-
-# General settings
+# Markdown Settings
+markdown: kramdown
 highlighter: rouge
 markdown: kramdown
 kramdown:
   input: GFM
+
+# Sass Settings
 sass:
-  sass_dir: _scss
+  add_charset: true
+  sass_dir: public/sass
   style: :compressed
 
+# Build Settings
+exclude:
+  - package.json
+  - README.md
+  - CNAME
+  - public/sass
+  - Gemfile
+  - Gemfile.lock
+  - Guardfile
+  - LICENSE
 
-# Collections
+# Plugin Settings
+plugins:
+  #- jekyll-feed
+  #- jekyll-sitemap
+
+# Collections Settings
 collections:
   nameofcollection:
     output: false
