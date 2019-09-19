@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     {% include layouts/head.html %}
-</head>
-<body class="page">
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        {% include layouts/app-header.html %}
+      </header>
 
-    <div class="page__wrapper">
+      <div class="app__main">
         {{ content }}
-    </div>
+      </div>
 
+      <footer class="app__footer">
+        {% include layouts/app-footer.html %}
+      </footer>
+    </div>
     <!-- scripts -->
     <script src="./public/scripts/main.js"></script>
-</body>
+  </body>
 </html>
