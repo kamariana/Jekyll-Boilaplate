@@ -1,0 +1,32 @@
+/**
+ * Icon
+ */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: margin 0.1s linear;
+  font-size: 16px;
+
+  // * Modifiers
+  &--circle {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    background-color: var(--enabled);
+    border-radius: var(--radius-l);
+    color: #fff;
+  }
+
+  // * States
+  &.is-small {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+  }
+  &.is-large {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+  }
+}

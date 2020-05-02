@@ -1,0 +1,80 @@
+/**
+ * Sides
+ */
+.sides {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  // * States
+  &.with-gaps {
+    > * + * {
+      margin-top: var(--gap-m);
+    }
+  }
+}
+
+.side {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+// * MQs
+@include respond(medium) {
+  .sides {
+    flex-direction: row;
+
+    // * States
+    &.with-gaps {
+      > * + * {
+        margin-top: 0;
+        margin-left: var(--gap-m);
+      }
+    }
+  }
+} // 768px
+
+@include respond(medium-small) {
+  .sides {
+    &.with-gaps {
+      > * + * {
+        margin-left: var(--gap-l);
+      }
+    }
+
+    // * States
+    &.with-gaps {
+      > .is-third {
+        width: calc(33.3333% - var(--gap-l));
+      }
+      > .is-quarter {
+        width: calc(25% - var(--gap-l));
+      }
+      > .is-fifth {
+        width: calc(20% - var(--gap-l));
+      }
+    }
+  }
+
+  .side {
+    > * {
+      flex: none;
+      width: 100%;
+    }
+
+    &.is-third,
+    &.is-quarter,
+    &.is-fifth {
+      flex: none;
+    }
+    &.is-third {
+      width: 33.3333%;
+    }
+    &.is-quarter {
+      width: 25%;
+    }
+    &.is-fifth {
+      width: 20%;
+    }
+  }
+} // 1024px

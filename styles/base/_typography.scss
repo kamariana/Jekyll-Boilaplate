@@ -1,0 +1,125 @@
+/**
+ * Typography
+ */
+
+// * Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: var(--ws-xxl);
+  color: var(--gray-darkest);
+  font-family: var(--font-secondary);
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h1,
+.h1 {
+  font-size: var(--font-size-heading-l);
+  line-height: 1.3;
+}
+h2,
+.h2 {
+  font-size: var(--font-size-heading-m);
+  line-height: 1.3;
+}
+h3,
+.h3 {
+  font-size: var(--font-size-heading-s);
+  line-height: 1.4;
+}
+
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-size: var(--font-size-body-l);
+  line-height: 1.5;
+}
+
+// * links
+a {
+  color: var(--enabled);
+  &:hover {
+    color: var(--hover);
+  }
+  &:focus {
+    color: var(--gray-darkest);
+    background-color: var(--focused);
+  }
+}
+
+// * List
+ul,
+ol {
+  padding-left: var(--gap-l);
+  // nested list
+  ul,
+  ol {
+    margin: var(--ws-t) 0;
+  }
+}
+
+// * Quotation
+.blockquote {
+  max-width: var(--dim-m);
+  padding-left: var(--gap-l);
+  font-size: var(--font-size-body-l);
+  line-height: 1.5;
+  font-style: italic;
+  text-align: center;
+  quotes: "“" "”";
+  p {
+    margin-bottom: var(--ws-m);
+  }
+}
+
+small,
+figcaption {
+  font-size: var(--font-size-body-s);
+}
+
+// * MQs
+@include respond(medium-small) {
+  body {
+    font-size: 1.188rem; // 19px
+  }
+
+  h1,
+  .h1 {
+    font-size: var(--font-size-heading-xl);
+    line-height: 1.2;
+  }
+
+  h2,
+  .h2 {
+    font-size: var(--font-size-heading-l);
+    line-height: 1.2;
+  }
+
+  h3,
+  .h3 {
+    font-size: var(--font-size-heading-m);
+    line-height: 1.3;
+  }
+
+  h4,
+  .h4 {
+    font-size: var(--font-size-heading-s);
+    line-height: 1.4;
+  }
+
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    font-size: var(--font-size-body-l);
+    line-height: 1.5;
+  }
+} // 1024px

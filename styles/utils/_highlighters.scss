@@ -1,0 +1,37 @@
+/**
+ * Highlighters
+ */
+
+// * grays
+.u-hl-gray-darkest {
+  background-color: var(--gray-darkest);
+}
+.u-hl-gray-dark {
+  background-color: var(--gray-dark);
+}
+.u-hl-gray {
+  background-color: var(--gray);
+}
+.u-hl-gray-light {
+  background-color: var(--gray-light);
+}
+.u-hl-gray-lightest {
+  background-color: var(--gray-lightest);
+}
+
+//  * Priamary
+.u-hl-primary {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.u-hl-primary-darkest {
+  background-color: var(--primary-darkest);
+  color: #fff;
+}
+
+// * Secondary
+.u-hl-secondary {
+  background-color: var(--secondary);
+  color: var(--gray-darkest);
+}

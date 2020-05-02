@@ -1,0 +1,59 @@
+/**
+ * Sidebar
+ */
+.sidebar {
+  display: flex;
+  flex-wrap: wrap;
+
+  // * Modifiers
+  &--reverse {
+    .aside {
+      order: -1;
+    }
+  }
+
+  // * States
+  &.with-gaps {
+    margin-bottom: calc(var(--gap-l) * -1);
+    margin-left: calc(var(--gap-l) * -1);
+    > * {
+      margin-bottom: var(--gap-l);
+      margin-left: var(--gap-l);
+    }
+  }
+}
+
+.aside {
+  flex-grow: 1;
+
+  // States
+  &.is-tiny {
+    flex-basis: var(--dim-xxs);
+  }
+
+  &.is-small {
+    flex-basis: var(--dim-xs);
+  }
+
+  &.is-large {
+    flex-basis: var(--dim-s);
+  }
+}
+
+.not-aside {
+  flex-basis: 0;
+  flex-grow: 777;
+  min-width: calc(50% - var(--gap-l));
+}
+
+// * MQs
+@include respond(small) {
+} // 600px
+@include respond(medium) {
+} // 768px
+@include respond(medium-small) {
+} // 1024px
+@include respond(medium-large) {
+} // 1280px
+@include respond(large) {
+} // 1440px

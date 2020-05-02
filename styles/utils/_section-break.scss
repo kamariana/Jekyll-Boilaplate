@@ -1,0 +1,15 @@
+.u-break {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--gray-light);
+  margin: var(--gap-m) 0;
+  padding: 0;
+}
+
+// * MQs
+@include respond(medium-small) {
+  .u-break {
+    margin: var(--gap-xh) 0;
+  }
+}

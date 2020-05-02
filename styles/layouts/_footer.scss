@@ -1,0 +1,43 @@
+/**
+ * Footer styles
+ */
+.footer {
+  // * Modifiers
+  &--main-college {
+    border-top: 10px solid var(--primary-lightest);
+  }
+
+  &--gc-journal {
+    background-color: var(--gray-darkest);
+    p {
+      color: var(--primary-lightest);
+    }
+  }
+}
+
+.footer-meta {
+  h3,
+  a {
+    color: var(--primary-lightest);
+  }
+
+  h3 {
+    margin-bottom: var(--ws-xs);
+  }
+
+  a {
+    text-decoration: none;
+    padding: var(--ws-xxs) 0;
+    align-self: flex-start;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--ws-s);
+}

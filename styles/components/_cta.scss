@@ -1,0 +1,98 @@
+// * Mixins
+@mixin defaults {
+  align-items: center;
+  justify-content: center;
+  min-width: var(--ws-xxh);
+  height: var(--shape-h);
+  padding: var(--ws-xxs) var(--ws-s);
+  transition: background 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/**
+ * Call to actions (cta)
+ * they communicate actions that users can take
+ */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  text-decoration: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    color: var(--hover);
+  }
+  &:focus {
+    color: var(--hover);
+    background-color: var(--selected);
+    outline: var(--ws-xxs) solid var(--selected);
+  }
+
+  // always margin left the second child in a cta
+  > * + * {
+    margin-left: var(--ws-xxs);
+  }
+
+  // * Modifiers
+  // Primary cta - use a color fill
+  &--primary {
+    @include defaults;
+    background-color: var(--primary);
+    color: #fff;
+    &:hover,
+    &:focus {
+      background-color: var(--primary-dark);
+      color: #fff;
+    }
+  }
+
+  // Primary alternate cta - use a different color fill
+  &--primary-alt {
+    @include defaults;
+    background-color: var(--secondary);
+    color: var(--gray-darkest);
+    &:hover,
+    &:focus {
+      background-color: var(--secondary-dark);
+      color: var(--gray-darkest);
+    }
+  }
+
+  &--secondary {
+    @include defaults;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    &:hover,
+    &:focus {
+      background-color: var(--selected);
+      color: var(--primary-darkest);
+    }
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  // * not related child elements
+  &:hover .icon {
+    margin-left: var(--ws-xs);
+  }
+}
+
+// .cta-toggle {
+//   //TODO  not yet implemented
+// }
+
+.cta-group {
+  display: grid;
+
+  // * states
+  &.with-gaps {
+    grid-gap: var(--gap-xs);
+  }
+  &.at-center {
+    align-items: center;
+  }
+}

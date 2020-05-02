@@ -1,0 +1,22 @@
+.u-pull-quote {
+  position: relative;
+  margin: var(--ws-xxxxl) auto;
+  padding-left: 0;
+  font-family: "Georgia", serif;
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    color: var(--gray);
+    font-size: 96px;
+    top: 0;
+    left: 0;
+  }
+}
+
+// * MQs
+@include respond(medium-small) {
+  .u-pull-quote {
+    font-size: var(--font-size-heading-s);
+  }
+}

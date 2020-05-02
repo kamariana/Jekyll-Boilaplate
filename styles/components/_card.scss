@@ -1,0 +1,432 @@
+// * mixins
+@mixin position-abs-zero-all-sides-pseudo-class {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin position-abs-zero-all-sides {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin position-rel-text-on-top {
+  position: relative;
+  z-index: var(--layer-default-alt);
+}
+
+@mixin fit-media-into-container {
+  object-position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin dp-flex-direction-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin push-cta-at-bottom {
+  .cta {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+}
+
+@mixin cta-style-on-hover-and-focus-on-card {
+  outline: var(--ws-xxs) solid var(--secondary);
+  background-color: var(--secondary);
+  color: var(--gray-darkest);
+}
+
+@mixin min-cover-media-and-overflow-hidden {
+  min-height: var(--dim-xxs);
+  overflow: hidden;
+  background-color: var(--gray);
+}
+
+@mixin trans-and-scale-all {
+  transition: all 0.3s ease-in;
+  transform: scale(1);
+}
+
+@mixin trans-and-scale-all-on-her-and-focus {
+  transform: scale(1.02);
+}
+
+@mixin push-the-last-elem-down {
+  margin-bottom: var(--ws-xs);
+}
+
+/**
+ * Cards
+ */
+// Card fallback incase if grid is not supported
+.cards {
+  @include list-bare;
+  max-width: var(--dim-s);
+
+  // apply top gap on each card except the first one
+  > * + * {
+    margin-top: var(--gap-m);
+  }
+}
+
+// * MQs
+@include respond(medium-small) {
+  .cards {
+    // apply top gap on each card except the first one
+    > * + * {
+      margin-top: var(--gap-l);
+    }
+  }
+} // 1024px
+
+// * FQ
+@supports (display: grid) {
+  .cards {
+    max-width: 100%; // reset width
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+
+    > * + * {
+      margin-top: 0; // reset top gap
+    }
+
+    // * States
+    &.with-gaps {
+      grid-gap: var(--gap-m);
+    }
+  }
+
+  .card {
+    @include dp-flex-direction-column;
+    position: relative;
+    background-color: #fff;
+    box-shadow: var(--bs-card);
+    transition: box-shadow 0.3s ease-in;
+
+    &__title {
+      margin-bottom: var(--ws-xs);
+      font-size: var(--font-size-body-l);
+      line-height: 1.6;
+
+      a {
+        color: var(--gray-darkest);
+        text-decoration: none;
+        &::before {
+          @include position-abs-zero-all-sides-pseudo-class;
+        }
+      }
+    }
+
+    &__text {
+      @include dp-flex-direction-column;
+      @include push-cta-at-bottom;
+      padding: var(--ws-xs);
+
+      // let the pen ultimate push the last child down
+      > :nth-last-child(2) {
+        @include push-the-last-elem-down;
+      }
+    }
+
+    &__text-item {
+      @include dp-flex-direction-column;
+      @include push-cta-at-bottom;
+
+      // let the pen ultimate push the last child down
+      > :nth-last-child(2) {
+        @include push-the-last-elem-down;
+      }
+    }
+
+    &__tag {
+      order: -1;
+    }
+
+    &__media {
+      img,
+      picture,
+      video {
+        display: block;
+      }
+    }
+
+    // * card interactions
+    &:hover {
+      box-shadow: var(--bs-card-hover);
+    }
+    // cta style when user hover on the card
+    &:hover .cta {
+      @include cta-style-on-hover-and-focus-on-card;
+    }
+
+    // focus within to match the hover style
+    &:focus-within {
+      box-shadow: var(--bs-card-hover);
+    }
+    // cta style when user focus on the card
+    & .card__title:focus-within ~ .cta {
+      @include cta-style-on-hover-and-focus-on-card;
+    }
+    // remove the unnecessary "basic focus style" only where :focus-within is supported.
+    &:focus-within .card__title a:focus {
+      background-color: transparent;
+      outline: none;
+    }
+
+    // * Modifiers
+    &--bare {
+      @include push-cta-at-bottom;
+      padding: var(--ws-xs);
+    }
+
+    &--bareless {
+      @include push-cta-at-bottom;
+      box-shadow: none;
+
+      .card__figure {
+        order: -1;
+        margin-bottom: var(--ws-xs);
+        img {
+          border-radius: var(--radius-t);
+        }
+      }
+
+      p {
+        margin-top: 0;
+        margin-bottom: var(--ws-xs);
+      }
+
+      // * card interactions
+      &:hover {
+        box-shadow: none;
+      }
+      // focus within to match the hover style
+      &:focus-within {
+        box-shadow: none;
+      }
+    }
+
+    &--stack {
+      .card__media {
+        order: -1;
+        overflow: hidden;
+
+        img,
+        picture,
+        video {
+          @include trans-and-scale-all;
+        }
+      }
+
+      // * card interactions
+      &:hover .card__media,
+      &:focus-within .card__media {
+        img,
+        picture,
+        video {
+          @include trans-and-scale-all-on-her-and-focus;
+        }
+      }
+    }
+
+    &--cover {
+      @include min-cover-media-and-overflow-hidden;
+
+      .card__text {
+        @include position-rel-text-on-top;
+        color: #fff;
+        a {
+          color: #fff;
+        }
+
+        &-item {
+          max-width: var(--dim-xxs);
+        }
+
+        // States
+        &.at-center {
+          margin: auto;
+          text-align: center;
+        }
+
+        &.at-left-center {
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+
+        &.at-bottom {
+          margin-top: auto;
+        }
+      }
+
+      // if cover has media via HTML
+      .card__media {
+        @include position-abs-zero-all-sides;
+
+        &::after {
+          @include position-abs-zero-all-sides-pseudo-class;
+          background-color: var(--tp-black-light);
+          transition: background 1s ease;
+        }
+
+        img,
+        picture,
+        video {
+          @include fit-media-into-container;
+        }
+      }
+
+      // * card interactions
+      &:hover {
+        box-shadow: none;
+      }
+      &:hover .card__media::after {
+        background-color: var(--tp-black-dark);
+      }
+
+      // focus within to match the hover style
+      &:focus-within {
+        box-shadow: none;
+      }
+      &:focus-within .card__media::after {
+        background-color: var(--tp-black-medium);
+      }
+    }
+
+    &--grid {
+      .card__media {
+        position: relative;
+        @include min-cover-media-and-overflow-hidden;
+
+        figure {
+          @include position-abs-zero-all-sides;
+          margin: 0;
+        }
+
+        img,
+        picture,
+        video {
+          @include fit-media-into-container;
+          @include trans-and-scale-all;
+        }
+      }
+
+      // * card interactions
+      &:hover .card__media,
+      &:focus-within .card__media {
+        img,
+        picture,
+        video {
+          @include trans-and-scale-all-on-her-and-focus;
+        }
+      }
+    }
+
+    &--onward {
+    }
+
+    &--paper {
+      margin-top: var(--gap-l);
+
+      .card__text {
+        @include position-rel-text-on-top;
+        min-height: 100%;
+        background-color: #fff;
+      }
+
+      &::before,
+      &::after {
+        @include position-abs-zero-all-sides-pseudo-class;
+        z-index: var(--layer-default);
+        display: block;
+        background-color: #fff;
+        transition: var(--all-3x-ease-in);
+        box-shadow: var(--bs-card);
+      }
+
+      &::before {
+        top: -16px;
+        right: 16px;
+        left: 16px;
+      }
+
+      &::after {
+        top: -32px;
+        right: 32px;
+        left: 32px;
+      }
+
+      // * card interactions
+      &:hover {
+        box-shadow: none;
+      }
+      &:hover::before,
+      &:focus::before {
+        transform: translate(-16px, -16px) rotate(-5deg);
+      }
+      &:hover::after,
+      &:focus::after {
+        transform: translate(32px, 32px) rotate(5deg);
+      }
+
+      // focus within to match the hover style
+      &:focus-within {
+        box-shadow: none;
+      }
+      &:focus-within::before {
+        transform: translate(-16px, -16px) rotate(-5deg);
+      }
+      &:focus-within::after {
+        transform: translate(32px, 32px) rotate(5deg);
+      }
+    }
+  }
+
+  // * MQs
+  @include respond(medium) {
+    .cards {
+      grid-template-columns: repeat(auto-fill, minmax(22.5rem, 1fr));
+    }
+
+    .card--grid {
+      flex-direction: row;
+
+      > * {
+        flex: 1;
+      }
+    }
+
+    .card.is-two {
+      grid-column: 1 / span 2;
+    }
+  } // 768px
+
+  @include respond(medium-small) {
+    .cards {
+      &.with-gaps {
+        grid-gap: var(--gap-l);
+      }
+    }
+
+    .card {
+      &__text {
+        padding: var(--ws-l);
+      }
+
+      // * Modifiers
+      &--bare {
+        padding: var(--ws-l);
+      }
+    }
+  }
+}

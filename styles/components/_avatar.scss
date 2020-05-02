@@ -1,0 +1,76 @@
+.avatar {
+  overflow: hidden;
+  background-color: var(--gray);
+  border: 4px solid #fff;
+
+  // * Modifiers
+  &--circle {
+    border-radius: var(--radius-l);
+  }
+
+  &--hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  &--heptagon {
+    clip-path: polygon(
+      50% 0%,
+      90% 20%,
+      100% 60%,
+      75% 100%,
+      25% 100%,
+      0% 60%,
+      10% 20%
+    );
+  }
+
+  &--octagon {
+    clip-path: polygon(
+      30% 0%,
+      70% 0%,
+      100% 30%,
+      100% 70%,
+      70% 100%,
+      30% 100%,
+      0% 70%,
+      0% 30%
+    );
+  }
+
+  // * States
+  &.is-small {
+    width: 64px;
+    height: 64px;
+  }
+
+  &.is-medium {
+    width: 84px;
+    height: 84px;
+  }
+
+  &.is-large {
+    width: 124px;
+    height: 124px;
+  }
+}
+
+// * MQs
+@include respond(medium-small) {
+  .avatar {
+    // * States
+    &.is-small {
+      width: 64px;
+      height: 64px;
+    }
+
+    &.is-medium {
+      width: 120px;
+      height: 120px;
+    }
+
+    &.is-large {
+      width: 156px;
+      height: 156px;
+    }
+  }
+} // 1024px

@@ -1,0 +1,235 @@
+:root {
+  /** 
+   * Spacing methods
+   */
+
+  // * Baseline
+  --baseline: 1.75; // 28px
+
+  // * gutter and margin around layouts and components.
+  // Gutters are the spaces between columns. They help separate content. Margins are the space between content and the left and right edges of the screen. Gutters and margins widths are defined as fixed values at each breakpoint range. To better adapt to the screen, the widths can change at different breakpoints. Gutters, and margins are laid out from left to right
+
+  --gap-xxs: 8px;
+  --gap-xs: 16px;
+  --gap-s: 24px;
+  --gap-m: 28px;
+  --gap-l: 32px;
+  --gap-xh: 56px;
+
+  // * Spacing within layouts and components.
+  // Spacing methods are more granular than the Gutters, and margins above. Spacing methods are a set of rules around how to place elements within layouts and components.
+
+  // ws === white space
+  --ws-t: 0.25rem; // 4px;
+  --ws-xxs: 0.5rem; // 8px;
+  --ws-xs: 1rem; // 16px
+  --ws-s: 1.5rem; // 24px;
+  --ws-m: 1.75rem; // 28px; // baseline
+  --ws-l: 2rem; // 32px;
+  --ws-xl: 2.25rem; // 36px
+  --ws-xxl: 2.75rem; // 44px;
+  --ws-h: 3rem; // 48px;
+  --ws-xh: 3.5rem; // 56px
+  --ws-xxh: 4rem; // 64px
+  --ws-eh: 4.5rem; // 72px
+  --ws-xeh: 6rem; // 96px
+
+  // * Containers
+  // A container is a shape used to represent an enclosed area. Containers can hold UI elements such as images, icons, or surfaces.
+
+  --shape-xxs: 8px;
+  --shape-xs: 16px;
+  --shape-s: 24px;
+  --shape-l: 32px;
+  --shape-xl: 36px;
+  --shape-xxl: 44px;
+  --shape-h: 48px;
+
+  // * Dimensions
+  // Dimensions refer to the width and height of component elements.
+
+  --dim-t: 12.5rem; // 200px
+  --dim-xxs: 22.5rem; // 360px
+  --dim-xs: 30rem; // 480px
+  --dim-s: 37.5rem; // 600px
+  --dim-m: 48rem; // 768px
+  --dim-xm: 64rem; // 1024px
+  --dim-xxm: 80rem; // 1280px
+  --dim-l: 90rem; // 1440px
+  --dim-xl: 120rem; // 1920px
+
+  /** 
+   * Sizing
+   */
+  //* Border radius
+  --radius-t: 4px;
+  --radius-l: 100%;
+
+  /** 
+   * Typography
+   */
+  // * font family
+  --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  --font-secondary: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+  --font-code: "Fira Code", "Courier New", Courier, monospace;
+
+  // * font sizes
+  --font-size-body-t: 0.75rem; // 12px
+  --font-size-body-s: 0.875rem; // 14px
+  --font-size-body: 1rem; // 16px
+  --font-size-body-l: 1.25rem; // 20px
+
+  --font-size-heading-s: 1.5rem; // 24px
+  --font-size-heading-m: 1.75rem; // 28px
+  --font-size-heading-l: 2.25rem; // 36px
+  --font-size-heading-xl: 2.75rem; // 44px
+  --font-size-heading-xxl: 3rem; // 48px
+  --font-size-heading-h: 3.5rem; // 56px
+
+  // * font weights
+  --font-weight-bold: 700;
+  --font-weight-regular: 400;
+
+  /** 
+   * Colors
+   */
+  // * Brand Primary & Secondary
+  --primary-darkest: #000034;
+  --primary-dark: #081e55;
+  --primary: #172c66;
+  --primary-light: #5b658e;
+  --primary-lightest: #b6bacf;
+
+  --secondary-darkest: #ff6d00;
+  --secondary-dark: #ffa100;
+  --secondary: #ffc300;
+  --secondary-light: #ffd743;
+  --secondary-lightest: #ffedb0;
+
+  // * Neutral
+  --gray-darkest: #212121;
+  --gray-darker: #424242;
+  --gray-dark: #616161;
+  --gray: #9e9e9e;
+  --gray-light: #e0e0e0;
+  --gray-lighter: #eeeeee;
+  --gray-lightest: #f5f5f5;
+
+  // * Accent
+  --red-darkest: #b71c1c;
+  --red-dark: #d32f2f;
+  --red: #f44336;
+  --red-light: #e57373;
+  --red-lightest: #ffcdd2;
+
+  --green-darkest: #1b5e20;
+  --green-dark: #388e3c;
+  --green: #4caf50;
+  --green-light: #81c784;
+  --green-lightest: #c8e6c9;
+
+  --blue-darkest: #0d47a1;
+  --blue-dark: #1976d2;
+  --blue: #2196f3;
+  --blue-light: #64b5f6;
+  --blue-lightest: #bbdefb;
+
+  --teal-darkest: #004d40;
+  --teal-dark: #00796b;
+  --teal: #009688;
+  --teal-light: #4db6ac;
+  --teal-lightest: #b2dfdb;
+
+  --yellow-darkest: #f57f17;
+  --yellow-dark: #fbc02d;
+  --yellow: #ffeb3b;
+  --yellow-light: #fff176;
+  --yellow-lightest: #fff9c4;
+
+  // * states
+  --enabled: var(--blue-darkest);
+  --disabled: var(--gray);
+  --hover: var(--primary-dark);
+  --focused: var(--secondary);
+  --visited: #7b1fa2;
+  --selected: var(--primary-lightest);
+  --activated: var(--primary-light);
+
+  // * forms
+  --field-inactive: var(--black-alt);
+  --field-hover: var(--black);
+  --field-focus: var(--info);
+  --field-invalid: var(--error);
+  --field-focus-shadow: #0a84ff4d;
+  --field-invalid-shadow: #b200204d;
+
+  // * Schools colors
+  --sag-primary-darkest: #1ea471;
+  --sag-primary-dark: #1ea471;
+  --sag-primary: #1ea471;
+  --sag-primary-light: #1ea471;
+  --sag-primary-lightest: #1ea471;
+
+  --sed-primary-darkest: #5e7a90;
+  --sed-primary-dark: #5e7a90;
+  --sed-primary: #5e7a90;
+  --sed-primary-light: #5e7a90;
+  --sed-primary-lightest: #5e7a90;
+
+  --snu-primary-darkest: #a23c90;
+  --snu-primary-dark: #a23c90;
+  --snu-primary: #a23c90;
+  --snu-primary-light: #a23c90;
+  --snu-primary-lightest: #a23c90;
+
+  --sph-primary-darkest: #146cb6;
+  --sph-primary-dark: #146cb6;
+  --sph-primary: #146cb6;
+  --sph-primary-light: #146cb6;
+  --sph-primary-lightest: #146cb6;
+
+  // * transparent backgrounds
+  --tp-black-light: rgba(0, 0, 0, 0.4);
+  --tp-black-medium: rgba(0, 0, 0, 0.5);
+  --tp-black-dark: rgba(0, 0, 0, 0.7);
+
+  --tp-white-light: rgba(255, 255, 255, 0.4);
+  --tp-white-medium: rgba(255, 255, 255, 0.5);
+  --tp-white-dark: rgba(255, 255, 255, 0.7);
+  --tp-white-darker: rgba(255, 255, 255, 0.95);
+
+  --tp-primary: rgba(23, 44, 102, 0.5);
+  --tp-secondary: rgba(255, 196, 0, 0.75);
+
+  // * box shadows
+  --bs-border-gray-lightest: 0 0 0 1px var(--gray-lightest);
+  --bs-border-gray-light: 0 0 0 1px var(--gray-light);
+  --bs-card: 0 1px 4px 0 rgba(11, 11, 12, 0.1);
+  --bs-card-hover: 0 0 0 5px rgba(224, 224, 224, 0.7);
+  --bs-box: 0 10px 15px -8px rgba(11, 11, 12, 0.3);
+
+  // * transitions
+  --all-3s-ease-in: all 0.3s ease-in; // TODO this is expensive see the kind of transitions instead of saying all
+
+  /** 
+   * Z-Index layers
+   */
+  --layer-modal-content: 60;
+  --layer-modal: 50;
+  --layer-overlay: 40;
+  --layer-dropdown: 30;
+  --layer-navbar: 20;
+  --layer-default-alt: 10;
+  --layer-default: 1;
+  --layer-negative: -1;
+
+  line-height: var(--baseline);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body);
+  background-color: #fff;
+  color: var(--gray-darkest);
+  scroll-behavior: smooth;
+}

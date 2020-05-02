@@ -1,0 +1,9 @@
+{% assign items = site.data.navigation %}
+<nav class="nav nav--primary">
+  {% for item in items %}
+    {% assign url = item.link | replace: " ", "_" | downcase %}
+    <a href="{{ url }}" {% if url == page.url %} class="is-active" {% endif %}>
+      {{ item.title }}
+    </a>
+  {% endfor %}
+</nav>

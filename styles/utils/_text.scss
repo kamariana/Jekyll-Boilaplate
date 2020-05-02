@@ -1,0 +1,45 @@
+// Caption for headings
+.u-caption {
+  display: block;
+
+  // * modifiers
+  &--headline {
+    color: var(--gray-dark);
+    font-size: var(--font-size-body-l);
+    line-height: 1.5;
+  }
+
+  // use for news/events/stories and so
+  &--tag {
+    margin: 0 0 var(--ws-xs) 0;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-body-t);
+    text-transform: uppercase;
+    color: var(--gray-dark);
+  }
+
+  // numbers captions  for bold numbers
+  &--number {
+    line-height: 1.4;
+    font-size: var(--font-size-heading-s);
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+.u-lead-paragraph {
+  font-size: var(--font-size-body-l);
+  line-height: 1.4;
+}
+
+.u-block-inline-elem {
+  display: block;
+  margin: var(--ws-xs) 0;
+}
+
+.u-reset-list {
+  @include list-bare;
+}
+
+// * MQs
+@include respond(medium-small) {
+} // 1024px

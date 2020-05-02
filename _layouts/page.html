@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include utils/meta-data.html %}
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/main-v1.min.css">
+  </head>
+  <body>
+    <a href="#main" class="u-sr-only">Skip to main content</a>
+
+    <div class="page"> 
+      <header class="header" role="banner">
+        {% include main/header.html %}
+      </header>
+
+      <main id="main">
+        {{ content }}
+      </main>
+
+      <footer class="footer" role="contentinfo">
+        {% include main/footer.html %}
+      </footer>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="{% link /scripts/main.js %}"></script>
+    {% include utils/analytics/gtag.html %}
+  </body>
+</html>

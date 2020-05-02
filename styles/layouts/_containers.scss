@@ -1,0 +1,63 @@
+/** 
+ * Containers 
+ */
+
+// * Page wrapper
+.page {
+  max-width: var(--dim-xl);
+  min-width: var(--dim-t);
+  margin: 0 auto;
+}
+
+// * Sections
+.section {
+  padding-top: var(--ws-xh);
+  padding-bottom: var(--ws-xh);
+
+  &__header {
+    margin-bottom: var(--ws-xxl);
+    .section__title {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: var(--ws-m);
+  }
+}
+
+// * contains
+.contain {
+  max-width: var(--dim-xxm);
+  margin: 0 auto;
+  padding-right: var(--gap-xs);
+  padding-left: var(--gap-xs);
+
+  // * Modifiers
+  &--large {
+    max-width: var(--dim-l);
+  }
+  &--full-width {
+    max-width: 100%;
+  }
+}
+
+.contain-pad {
+  margin: 0 auto;
+  padding-right: var(--gap-xs);
+  padding-left: var(--gap-xs);
+}
+
+// * MQs
+@include respond(medium-small) {
+  .section {
+    padding-top: var(--ws-xeh);
+    padding-bottom: var(--ws-xeh);
+  }
+
+  .contain,
+  .contain-pad {
+    padding-right: var(--gap-l);
+    padding-left: var(--gap-l);
+  }
+} // 1024px

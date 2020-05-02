@@ -1,0 +1,39 @@
+/**
+ * Breakpoint 
+ */
+$bps: (
+  tiny: 360px,
+  small: 600px,
+  medium: 768px,
+  medium-small: 1024px,
+  medium-large: 1280px,
+  large: 1440px,
+  xlarge: 1680px
+) !default;
+
+@mixin respond($bp) {
+  @if map-has-key($bps, $bp) {
+    @media screen and (min-width: #{map-get($bps, $bp)}) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown `#{$bp}` in $bps, please check";
+  }
+}
+
+// usage
+/* 
+// * MQs
+@include respond(small) {} // 600px
+@include respond(medium) {} // 768px
+@include respond(medium-small) {} // 1024px
+@include respond(medium-large) {} // 1280px
+@include respond(large) {} // 1440px
+*/
+
+// * List bare to reset ol, ul and dl elements
+@mixin list-bare {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

@@ -1,0 +1,15 @@
+/** 
+ * Spacing
+ * This applies various white space scale which adapts base on screen size.
+ */
+
+// * Containers
+.u-contain-vr {
+  > * + * {
+    margin-top: var(--ws-xxl);
+  }
+}
+
+// * MQs
+@include respond(medium-small) {
+}

@@ -1,0 +1,77 @@
+/**
+ * List
+ */
+.list {
+  @include list-bare;
+  max-width: var(--dim-xxs);
+
+  > li {
+    display: flex;
+    flex-direction: column;
+    > * {
+      margin: 0;
+    }
+  }
+
+  // * Modifiers
+
+  // * States
+  &.with-gaps {
+    > li + li {
+      margin-top: var(--gap-xs);
+    }
+  }
+
+  // * not related child elements
+  .cta {
+    margin-top: var(--ws-xxs);
+    align-self: flex-start;
+  }
+}
+
+// * MQs
+@include respond(medium-small) {
+  .list {
+    &.with-gaps {
+      > li + li {
+        margin-top: var(--gap-l);
+      }
+    }
+  }
+} // 1024px
+
+// * FQ
+@supports (display: grid) {
+  .list {
+    max-width: 100%; // reset width
+    display: grid;
+  }
+
+  // * Modifiers
+  .list--grid-small {
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  }
+  .list--grid {
+    grid-template-columns: repeat(auto-fill, minmax(22.5rem, 1fr));
+  }
+
+  // * States
+  .list.with-gaps {
+    grid-gap: var(--gap-xs);
+    > li + li {
+      margin-top: 0; // reset margin
+    }
+  }
+
+  // * MQs
+  @include respond(medium-small) {
+    .list {
+      &.with-gaps {
+        grid-gap: var(--gap-l);
+      }
+      &.at-center {
+        justify-content: center;
+      }
+    }
+  } // 1024px
+}

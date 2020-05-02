@@ -1,0 +1,56 @@
+/**
+ * Media object
+ */
+.media {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  figure {
+    margin-top: 0;
+  }
+
+  &__text {
+    flex: 1;
+    > * + * {
+      margin-top: var(--ws-xs);
+    }
+  }
+
+  &__figure {
+    order: -1;
+    margin-right: var(--ws-xs);
+  }
+
+  // * Modofiers
+  &--center {
+    align-items: center;
+  }
+
+  &--reverse > .media__figure {
+    margin-right: 0;
+    margin-left: var(--ws-xs);
+    order: 1;
+  }
+}
+
+// * MQs
+@include respond(medium-small) {
+  .media {
+    &__text {
+      > * + * {
+        margin-top: var(--ws-l);
+      }
+    }
+
+    &__figure {
+      margin: 0;
+      margin-right: var(--ws-l);
+    }
+
+    // * Modofiers
+    &--reverse > .media__figure {
+      margin-left: var(--ws-l);
+    }
+  }
+} // 1024px
