@@ -1,3 +1,9 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Fira Code";
+  src: url("../../assets/fonts/fira-code/FiraCode-VariableFont_wght.ttf");
+}
+
 :root {
   /** 
    * Spacing methods
@@ -6,14 +12,17 @@
   // * Baseline
   --baseline: 1.75; // 28px
 
-  // * gutter and margin around layouts and components.
+  // * gutter and margin around layouts and components and Containers
   // Gutters are the spaces between columns. They help separate content. Margins are the space between content and the left and right edges of the screen. Gutters and margins widths are defined as fixed values at each breakpoint range. To better adapt to the screen, the widths can change at different breakpoints. Gutters, and margins are laid out from left to right
+
+  // A container is a shape used to represent an enclosed area. Containers can hold UI elements such as images, icons, or surfaces.
 
   --gap-xxs: 8px;
   --gap-xs: 16px;
   --gap-s: 24px;
   --gap-m: 28px;
   --gap-l: 32px;
+  --gap-h: 48px;
   --gap-xh: 56px;
 
   // * Spacing within layouts and components.
@@ -33,17 +42,6 @@
   --ws-xxh: 4rem; // 64px
   --ws-eh: 4.5rem; // 72px
   --ws-xeh: 6rem; // 96px
-
-  // * Containers
-  // A container is a shape used to represent an enclosed area. Containers can hold UI elements such as images, icons, or surfaces.
-
-  --shape-xxs: 8px;
-  --shape-xs: 16px;
-  --shape-s: 24px;
-  --shape-l: 32px;
-  --shape-xl: 36px;
-  --shape-xxl: 44px;
-  --shape-h: 48px;
 
   // * Dimensions
   // Dimensions refer to the width and height of component elements.
@@ -71,10 +69,11 @@
   // * font family
   --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-
   --font-secondary: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;
   --font-code: "Fira Code", "Courier New", Courier, monospace;
+  --at-font-face: "Fira Code", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
   // * font sizes
   --font-size-body-t: 0.75rem; // 12px
@@ -158,38 +157,9 @@
   --selected: var(--primary-lightest);
   --activated: var(--primary-light);
 
-  // * forms
-  --field-inactive: var(--black-alt);
-  --field-hover: var(--black);
-  --field-focus: var(--info);
-  --field-invalid: var(--error);
-  --field-focus-shadow: #0a84ff4d;
-  --field-invalid-shadow: #b200204d;
-
-  // * Schools colors
-  --sag-primary-darkest: #1ea471;
-  --sag-primary-dark: #1ea471;
-  --sag-primary: #1ea471;
-  --sag-primary-light: #1ea471;
-  --sag-primary-lightest: #1ea471;
-
-  --sed-primary-darkest: #5e7a90;
-  --sed-primary-dark: #5e7a90;
-  --sed-primary: #5e7a90;
-  --sed-primary-light: #5e7a90;
-  --sed-primary-lightest: #5e7a90;
-
-  --snu-primary-darkest: #a23c90;
-  --snu-primary-dark: #a23c90;
-  --snu-primary: #a23c90;
-  --snu-primary-light: #a23c90;
-  --snu-primary-lightest: #a23c90;
-
-  --sph-primary-darkest: #146cb6;
-  --sph-primary-dark: #146cb6;
-  --sph-primary: #146cb6;
-  --sph-primary-light: #146cb6;
-  --sph-primary-lightest: #146cb6;
+  // * Selection colors
+  --text-selection-bg-color: var(--gray-darkest);
+  --text-selection-fg-color: var(--gray-lightest);
 
   // * transparent backgrounds
   --tp-black-light: rgba(0, 0, 0, 0.4);
@@ -227,7 +197,7 @@
   --layer-negative: -1;
 
   line-height: var(--baseline);
-  font-family: var(--font-primary);
+  font-family: var(--at-font-face);
   font-size: var(--font-size-body);
   background-color: #fff;
   color: var(--gray-darkest);

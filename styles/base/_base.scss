@@ -1,5 +1,4 @@
 // * Reset
-
 *,
 ::before,
 ::after {
@@ -27,7 +26,8 @@ p,
 blockquote,
 figure,
 th,
-td {
+td,
+fieldset {
   margin: 0;
   padding: 0;
 }
@@ -40,19 +40,44 @@ blockquote,
 ul,
 ol,
 table {
-  margin-top: var(--ws-m);
+  margin-bottom: var(--ws-m);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// * Remove gaps at the bottom of these with their containers
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
 }
 
 // * Media responsive
 img,
 video,
 audio {
-  display: block;
   max-width: 100%;
 }
 
-// * Embed
-iframe {
-  display: block;
-  width: 100%;
+// * Forms
+textarea {
+  resize: vertical; // Allow only vertical resizing of textareas.
+}
+
+// * Selection to avoid text-shadow during text highlighting
+::-moz-selection {
+  background: var(--text-selection-bg-color);
+  color: var(--text-selection-fg-color);
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--text-selection-bg-color);
+  color: var(--text-selection-fg-color);
+  text-shadow: none;
 }

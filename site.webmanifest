@@ -1,0 +1,16 @@
+{
+  "name": "40 days of CSS",
+  "short_name": "CSS40",
+  "description": "40 days of CSS code challenge",
+  "start_url": "https://css40.gm",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}

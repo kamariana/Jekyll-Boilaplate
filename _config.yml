@@ -1,9 +1,21 @@
 # Site settings
 title: The main title of your site
 description: description of the site
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+keywords: ""
+author: A. Camarian
+
+baseurl: "" #the subpath of your site, e.g. /blog
+url: "" #the base hostname & protocol for your site
 permalink: pretty
+
+type: website
+websiteImage: assets/images/siteimage.jpg
+mailUrl: https://s217085.gridserver.com/.tools/webmail/
+
+# Analytics code/s
+google:
+yandex:
+bing:
 
 # Markdown Settings
 markdown: kramdown
@@ -38,11 +50,6 @@ tw: #
 ig: #
 yt: #
 li: #
-
-mail: https://s217085.gridserver.com/.tools/webmail/
-
-# Analystics
-gtag: UA-165092230-1
 
 # Plugin Settings
 plugins:

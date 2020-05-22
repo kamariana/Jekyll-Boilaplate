@@ -1,10 +1,12 @@
 /**
- * Breakpoint 
+ * Breakpoint
+ * These BPs override the primary ('mobile first') styles.
+ * Modify as content requires. 
  */
 $bps: (
   tiny: 360px,
   small: 600px,
-  medium: 768px,
+  medium: 800px,
   medium-small: 1024px,
   medium-large: 1280px,
   large: 1440px,
@@ -13,7 +15,7 @@ $bps: (
 
 @mixin respond($bp) {
   @if map-has-key($bps, $bp) {
-    @media screen and (min-width: #{map-get($bps, $bp)}) {
+    @media only screen and (min-width: #{map-get($bps, $bp)}) {
       @content;
     }
   } @else {

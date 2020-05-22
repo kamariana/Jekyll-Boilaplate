@@ -1,6 +1,10 @@
 /**
  * Typography
  */
+body {
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
 
 // * Headings
 h1,
@@ -9,28 +13,24 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: var(--ws-xxl);
-  color: var(--gray-darkest);
+  margin-bottom: var(--ws-xxs);
+  line-height: 1.5;
+  color: var(--primary-darkest);
   font-family: var(--font-secondary);
-  &:first-child {
-    margin-top: 0;
-  }
 }
 
 h1,
 .h1 {
   font-size: var(--font-size-heading-l);
-  line-height: 1.3;
+  line-height: 1.4;
 }
 h2,
 .h2 {
   font-size: var(--font-size-heading-m);
-  line-height: 1.3;
 }
 h3,
 .h3 {
   font-size: var(--font-size-heading-s);
-  line-height: 1.4;
 }
 
 h4,
@@ -40,7 +40,6 @@ h5,
 h6,
 .h6 {
   font-size: var(--font-size-body-l);
-  line-height: 1.5;
 }
 
 // * links
@@ -76,7 +75,7 @@ ol {
   text-align: center;
   quotes: "“" "”";
   p {
-    margin-bottom: var(--ws-m);
+    margin-bottom: var(--ws-xxs);
   }
 }
 
@@ -88,31 +87,33 @@ figcaption {
 // * MQs
 @include respond(medium-small) {
   body {
-    font-size: 1.188rem; // 19px
+    font-size: var(--font-size-body-l); // 20px
   }
+} // 1024px
 
+@include respond(medium-large) {
   h1,
   .h1 {
     font-size: var(--font-size-heading-xl);
-    line-height: 1.2;
+    line-height: 1.4;
   }
 
   h2,
   .h2 {
     font-size: var(--font-size-heading-l);
-    line-height: 1.2;
+    line-height: 1.5;
   }
 
   h3,
   .h3 {
     font-size: var(--font-size-heading-m);
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   h4,
   .h4 {
     font-size: var(--font-size-heading-s);
-    line-height: 1.4;
+    line-height: 1.5;
   }
 
   h5,
@@ -122,4 +123,4 @@ figcaption {
     font-size: var(--font-size-body-l);
     line-height: 1.5;
   }
-} // 1024px
+} // 1280px

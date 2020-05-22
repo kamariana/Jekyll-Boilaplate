@@ -1,0 +1,10 @@
+// Hide visually and from screen readers
+.u-hidden,
+[hidden] {
+  display: none !important;
+}
+
+// Hide visually and from screen readers, but maintain layout
+.u-invisible {
+  visibility: hidden;
+}
