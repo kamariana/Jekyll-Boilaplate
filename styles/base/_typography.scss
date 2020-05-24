@@ -66,17 +66,13 @@ ol {
 }
 
 // * Quotation
-.blockquote {
-  max-width: var(--dim-m);
-  padding-left: var(--gap-l);
+blockquote {
+  margin-left: var(--gap-l);
   font-size: var(--font-size-body-l);
   line-height: 1.5;
   font-style: italic;
   text-align: center;
   quotes: "“" "”";
-  p {
-    margin-bottom: var(--ws-xxs);
-  }
 }
 
 small,
